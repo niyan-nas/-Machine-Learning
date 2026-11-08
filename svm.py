@@ -41,14 +41,8 @@ print(accuracy)
 
 def svm_display(svm,x,y):
   DecisionBoundaryDisplay.from_estimator(
-        svm,
-        x,
-        response_method='decision_function',
-        plot_method='contour',
-        levels=[0],
-        colors='black',
-        linewidths=2,
-        xlabel='sepal length (scaled)',ylabel='sepal widtth (scaled)'
+  svm, x, response_method="predict", cmap='coolwarm', alpha=0.3,
+  xlabel='sepal length (scaled)',ylabel='sepal widtth (scaled)'
     )
   plt.scatter(x[:,0],x[:,1],c=y,cmap='coolwarm',label="setosa")
 
